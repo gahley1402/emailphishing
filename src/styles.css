@@ -63,38 +63,45 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  /* PhishGuard — Threat Red / Indigo dark cyber theme */
+  --background: oklch(0.14 0.03 280);
+  --foreground: oklch(0.96 0.01 280);
+  --card: oklch(0.18 0.035 278);
+  --card-foreground: oklch(0.96 0.01 280);
+  --popover: oklch(0.18 0.035 278);
+  --popover-foreground: oklch(0.96 0.01 280);
+  --primary: oklch(0.62 0.21 275);
+  --primary-foreground: oklch(0.99 0.005 280);
+  --secondary: oklch(0.24 0.04 278);
+  --secondary-foreground: oklch(0.96 0.01 280);
+  --muted: oklch(0.22 0.035 278);
+  --muted-foreground: oklch(0.72 0.02 280);
+  --accent: oklch(0.30 0.08 275);
+  --accent-foreground: oklch(0.98 0.01 280);
+  --destructive: oklch(0.62 0.24 25);
+  --destructive-foreground: oklch(0.99 0.005 280);
+  --warning: oklch(0.78 0.16 70);
+  --success: oklch(0.70 0.17 150);
+  --border: oklch(0.30 0.04 278);
+  --input: oklch(0.24 0.04 278);
+  --ring: oklch(0.62 0.21 275);
+  --chart-1: oklch(0.62 0.21 275);
+  --chart-2: oklch(0.70 0.17 150);
+  --chart-3: oklch(0.78 0.16 70);
+  --chart-4: oklch(0.62 0.24 25);
+  --chart-5: oklch(0.74 0.13 320);
+  --sidebar: oklch(0.16 0.035 280);
+  --sidebar-foreground: oklch(0.92 0.01 280);
+  --sidebar-primary: oklch(0.62 0.21 275);
+  --sidebar-primary-foreground: oklch(0.99 0.005 280);
+  --sidebar-accent: oklch(0.24 0.04 278);
+  --sidebar-accent-foreground: oklch(0.96 0.01 280);
+  --sidebar-border: oklch(0.28 0.04 278);
+  --sidebar-ring: oklch(0.62 0.21 275);
+  --gradient-cyber: linear-gradient(135deg, oklch(0.62 0.21 275) 0%, oklch(0.62 0.24 25) 100%);
+  --gradient-card: linear-gradient(135deg, oklch(0.20 0.04 278) 0%, oklch(0.16 0.03 280) 100%);
+  --glow-primary: 0 0 32px oklch(0.62 0.21 275 / 0.35);
+  --glow-danger: 0 0 28px oklch(0.62 0.24 25 / 0.4);
 }
 
 .dark {
@@ -140,5 +147,29 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 0%, oklch(0.62 0.21 275 / 0.12), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 100%, oklch(0.62 0.24 25 / 0.10), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+@utility cyber-grid {
+  background-image:
+    linear-gradient(oklch(0.62 0.21 275 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.62 0.21 275 / 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility text-gradient-cyber {
+  background: var(--gradient-cyber);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
