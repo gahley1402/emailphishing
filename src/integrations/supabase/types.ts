@@ -14,16 +14,144 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blacklisted_domains: {
+        Row: {
+          created_at: string
+          domain: string
+          id: string
+          reason: string | null
+        }
+        Insert: {
+          created_at?: string
+          domain: string
+          id?: string
+          reason?: string | null
+        }
+        Update: {
+          created_at?: string
+          domain?: string
+          id?: string
+          reason?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email: string
+          id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      scan_history: {
+        Row: {
+          classification: string
+          created_at: string
+          details: Json
+          email_preview: string | null
+          findings: Json
+          id: string
+          risk_score: number
+          sender: string | null
+          subject: string | null
+          user_id: string
+        }
+        Insert: {
+          classification: string
+          created_at?: string
+          details?: Json
+          email_preview?: string | null
+          findings?: Json
+          id?: string
+          risk_score: number
+          sender?: string | null
+          subject?: string | null
+          user_id: string
+        }
+        Update: {
+          classification?: string
+          created_at?: string
+          details?: Json
+          email_preview?: string | null
+          findings?: Json
+          id?: string
+          risk_score?: number
+          sender?: string | null
+          subject?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      suspicious_keywords: {
+        Row: {
+          created_at: string
+          id: string
+          keyword: string
+          weight: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          keyword: string
+          weight?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          keyword?: string
+          weight?: number
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +278,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
