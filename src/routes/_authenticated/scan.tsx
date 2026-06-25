@@ -88,14 +88,14 @@ function ScanPage() {
         classification: result.classification,
         risk_score: result.score,
         email_preview: result.email.body.slice(0, 2000),
-        findings: result.findings as unknown as object,
+        findings: result.findings as unknown as never,
         details: {
           senderDomain: result.email.senderDomain,
           returnPath: result.email.returnPath,
           links: result.email.links.slice(0, 50),
           attachments: result.email.attachments,
           headers: result.email.headers,
-        },
+        } as unknown as never,
       }).select("id").single();
       if (error) throw error;
       toast.success("Scan saved");

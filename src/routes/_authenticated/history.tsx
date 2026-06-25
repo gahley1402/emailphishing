@@ -8,6 +8,8 @@ import { Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { ScanTable } from "./dashboard";
 
+type Row = { id: string; subject: string | null; sender: string | null; classification: "safe"|"suspicious"|"phishing"; risk_score: number; created_at: string };
+
 export const Route = createFileRoute("/_authenticated/history")({
   head: () => ({ meta: [{ title: "Scan History · PhishGuard" }] }),
   component: HistoryPage,
@@ -16,7 +18,7 @@ export const Route = createFileRoute("/_authenticated/history")({
 function HistoryPage() {
   const qc = useQueryClient();
   const [q, setQ] = useState("");
-  const { data = [], isLoading } = useQuery({
+  const { data = [], isLoading } = useQuery<Row[]>({
     queryKey: ["history"],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -24,7 +26,7 @@ function HistoryPage() {
         .select("id,subject,sender,classification,risk_score,created_at")
         .order("created_at", { ascending: false });
       if (error) throw error;
-      return data;
+      return data as Row[];
     },
   });
 

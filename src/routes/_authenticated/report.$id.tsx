@@ -26,6 +26,7 @@ function ReportPage() {
   if (isLoading) return <div className="text-sm text-muted-foreground">Loading report…</div>;
   if (error || !data) return <div className="text-sm text-destructive">Report not found.</div>;
 
+  const scan = data;
   const findings = (data.findings as unknown as Finding[]) || [];
   const details = (data.details as Record<string, unknown>) || {};
   const classification = data.classification as "safe" | "suspicious" | "phishing";
@@ -43,13 +44,13 @@ function ReportPage() {
     let y = 48;
     doc.setFillColor(99, 102, 241); doc.rect(0, 0, W, 8, "F");
     doc.setFontSize(20); doc.text("PhishGuard — Detection Report", 48, y); y += 14;
-    doc.setFontSize(10); doc.setTextColor(110); doc.text(new Date(data.created_at).toLocaleString(), 48, y); y += 24;
+    doc.setFontSize(10); doc.setTextColor(110); doc.text(new Date(scan.created_at).toLocaleString(), 48, y); y += 24;
     doc.setTextColor(20); doc.setFontSize(12);
-    doc.text(`Classification: ${classification.toUpperCase()}    Score: ${data.risk_score}/100`, 48, y); y += 22;
+    doc.text(`Classification: ${classification.toUpperCase()}    Score: ${scan.risk_score}/100`, 48, y); y += 22;
     doc.setFontSize(11);
     const head = [
-      ["Sender", data.sender || "—"],
-      ["Subject", data.subject || "(no subject)"],
+      ["Sender", scan.sender || "—"],
+      ["Subject", scan.subject || "(no subject)"],
       ["Sender Domain", String(details.senderDomain ?? "—")],
       ["Return-Path", String(details.returnPath ?? "—")],
     ];
