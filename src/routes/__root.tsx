@@ -82,11 +82,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "PhishGuard — Rule-Based Phishing Email Detection" },
       { name: "description", content: "Analyze emails for phishing indicators using a transparent rule engine — no AI required." },
       { name: "author", content: "PhishGuard" },
-      { property: "og:title", content: "PhishGuard — Phishing Email Detection" },
-      { property: "og:description", content: "Rule-based detection: keywords, sender analysis, URL inspection, attachment flags, header checks." },
+      { property: "og:title", content: "PhishGuard — Rule-Based Phishing Email Detection" },
+      { property: "og:description", content: "Analyze emails for phishing indicators using a transparent rule engine — no AI required." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "PhishGuard — Rule-Based Phishing Email Detection" },
+      { name: "twitter:description", content: "Analyze emails for phishing indicators using a transparent rule engine — no AI required." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6621dd3a-2ef2-4f40-9b70-91b36afd762f/id-preview-a1ac6b1a--8222d844-b459-45d1-a531-3bf26666a3a9.lovable.app-1782367918951.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6621dd3a-2ef2-4f40-9b70-91b36afd762f/id-preview-a1ac6b1a--8222d844-b459-45d1-a531-3bf26666a3a9.lovable.app-1782367918951.png" },
     ],
     links: [
       {
