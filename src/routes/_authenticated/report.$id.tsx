@@ -8,7 +8,7 @@ import jsPDF from "jspdf";
 import type { Finding } from "@/lib/detection-engine";
 
 export const Route = createFileRoute("/_authenticated/report/$id")({
-  head: () => ({ meta: [{ title: "Detection Report · PhishGuard" }] }),
+  head: () => ({ meta: [{ title: "Detection Report · EmailShield" }] }),
   component: ReportPage,
 });
 
@@ -43,7 +43,7 @@ function ReportPage() {
     const W = doc.internal.pageSize.getWidth();
     let y = 48;
     doc.setFillColor(99, 102, 241); doc.rect(0, 0, W, 8, "F");
-    doc.setFontSize(20); doc.text("PhishGuard — Detection Report", 48, y); y += 14;
+    doc.setFontSize(20); doc.text("EmailShield — Detection Report", 48, y); y += 14;
     doc.setFontSize(10); doc.setTextColor(110); doc.text(new Date(scan.created_at).toLocaleString(), 48, y); y += 24;
     doc.setTextColor(20); doc.setFontSize(12);
     doc.text(`Classification: ${classification.toUpperCase()}    Score: ${scan.risk_score}/100`, 48, y); y += 22;
@@ -76,7 +76,7 @@ function ReportPage() {
     doc.setFont("helvetica", "normal");
     const recLines = doc.splitTextToSize(recommendation, W - 96);
     doc.text(recLines, 48, y);
-    doc.save(`phishguard-report-${id.slice(0, 8)}.pdf`);
+    doc.save(`EmailShield-report-${id.slice(0, 8)}.pdf`);
   }
 
   return (

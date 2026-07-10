@@ -11,7 +11,7 @@ import { ScanTable } from "./dashboard";
 type Row = { id: string; subject: string | null; sender: string | null; classification: "safe"|"suspicious"|"phishing"; risk_score: number; created_at: string };
 
 export const Route = createFileRoute("/_authenticated/history")({
-  head: () => ({ meta: [{ title: "Scan History · PhishGuard" }] }),
+  head: () => ({ meta: [{ title: "Scan History · EmailShield" }] }),
   component: HistoryPage,
 });
 

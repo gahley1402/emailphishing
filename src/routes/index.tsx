@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PhishGuard — Rule-Based Phishing Email Detection" },
+      { title: "EmailShield — Rule-Based Phishing Email Detection" },
       { name: "description", content: "Transparent, rule-based phishing detection. No AI, no black boxes — verifiable cybersecurity signals." },
-      { property: "og:title", content: "PhishGuard — Phishing Email Detection" },
+      { property: "og:title", content: "EmailShield — Phishing Email Detection" },
       { property: "og:description", content: "Analyze emails for phishing using keywords, sender, URL, attachment and header rules." },
     ],
   }),
@@ -22,7 +22,7 @@ function Landing() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <ShieldCheck className="h-6 w-6 text-primary" />
-            <span className="font-semibold tracking-tight">PhishGuard</span>
+            <span className="font-semibold tracking-tight">EmailShield</span>
             <span className="ml-2 text-[10px] uppercase tracking-widest text-muted-foreground border border-border rounded px-1.5 py-0.5">v1.0</span>
           </Link>
           <div className="flex items-center gap-2">
@@ -45,7 +45,7 @@ function Landing() {
             with cybersecurity rules you can audit.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Paste an email, drop a <code className="text-primary">.eml</code> file, and PhishGuard inspects sender authenticity,
+            Paste an email, drop a <code className="text-primary">.eml</code> file, and EmailShield inspects sender authenticity,
             URLs, attachments, headers, and known phishing language — and explains every finding.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -91,7 +91,7 @@ function Landing() {
       </section>
 
       <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        PhishGuard · BCA Cyber Security Internship Project
+        EmailShield · BCA Cyber Security Internship Project
       </footer>
     </div>
   );

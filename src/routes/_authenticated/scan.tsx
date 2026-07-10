@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { Upload, ScanSearch, AlertTriangle, Mail, Link2, Paperclip, FileWarning } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/scan")({
-  head: () => ({ meta: [{ title: "Scan Email · PhishGuard" }] }),
+  head: () => ({ meta: [{ title: "Scan Email · EmailShield" }] }),
   component: ScanPage,
 });
 

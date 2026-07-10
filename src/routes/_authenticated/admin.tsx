@@ -10,7 +10,7 @@ import { Trash2, Plus, Users, ListChecks, Globe } from "lucide-react";
 import { ClassBadge } from "./dashboard";
 
 export const Route = createFileRoute("/_authenticated/admin")({
-  head: () => ({ meta: [{ title: "Admin Panel · PhishGuard" }] }),
+  head: () => ({ meta: [{ title: "Admin Panel · EmailShield" }] }),
   beforeLoad: async () => {
     const { data: u } = await supabase.auth.getUser();
     if (!u.user) throw redirect({ to: "/auth" });
