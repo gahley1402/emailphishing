@@ -31,7 +31,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <ShieldCheck className="relative h-7 w-7 text-primary" />
           </div>
           <div className="leading-tight">
-            <div className="font-semibold text-sidebar-foreground">PhishGuard</div>
+            <div className="font-semibold text-sidebar-foreground">EmailShield</div>
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Threat Console</div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <header className="md:hidden flex items-center justify-between border-b border-border px-4 py-3">
           <Link to="/dashboard" className="flex items-center gap-2">
             <Skull className="h-5 w-5 text-primary" />
-            <span className="font-semibold">PhishGuard</span>
+            <span className="font-semibold">EmailShield</span>
           </Link>
           <Button variant="ghost" size="sm" onClick={signOut}>
             <LogOut className="h-4 w-4" />

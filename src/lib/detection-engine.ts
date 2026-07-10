@@ -1,4 +1,4 @@
-// PhishGuard rule-based phishing detection engine.
+// EmailShield rule-based phishing detection engine.
 // Pure TypeScript — no AI/ML. Each rule emits findings with a weight that
 // contributes to a final risk score (0-100).
 

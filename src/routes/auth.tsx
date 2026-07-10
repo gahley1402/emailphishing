@@ -12,8 +12,8 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in · PhishGuard" },
-      { name: "description", content: "Sign in or create your PhishGuard analyst account." },
+      { title: "Sign in · EmailShield" },
+      { name: "description", content: "Sign in or create your EmailShield analyst account." },
     ],
   }),
   component: AuthPage,
@@ -87,7 +87,7 @@ function AuthPage() {
       <div className="hidden md:flex flex-col justify-between p-10 cyber-grid relative">
         <Link to="/" className="flex items-center gap-2">
           <ShieldCheck className="h-6 w-6 text-primary" />
-          <span className="font-semibold">PhishGuard</span>
+          <span className="font-semibold">EmailShield</span>
         </Link>
         <div>
           <h2 className="text-3xl font-bold leading-tight">
@@ -98,7 +98,7 @@ function AuthPage() {
             Every finding tied to a concrete cybersecurity rule. Built for security analysts, students, and SOC trainees.
           </p>
         </div>
-        <div className="text-xs text-muted-foreground">© PhishGuard · Threat Console</div>
+        <div className="text-xs text-muted-foreground">© EmailShield · Threat Console</div>
       </div>
 
       <div className="flex items-center justify-center p-6">

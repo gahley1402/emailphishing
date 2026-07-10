@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard · PhishGuard" }] }),
+  head: () => ({ meta: [{ title: "Dashboard · EmailShield" }] }),
   component: Dashboard,
 });
 

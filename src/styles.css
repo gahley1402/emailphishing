@@ -63,7 +63,7 @@
 
 :root {
   --radius: 0.625rem;
-  /* PhishGuard — Threat Red / Indigo dark cyber theme */
+  /* EmailShield — Threat Red / Indigo dark cyber theme */
   --background: oklch(0.14 0.03 280);
   --foreground: oklch(0.96 0.01 280);
   --card: oklch(0.18 0.035 278);

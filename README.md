@@ -1,4 +1,4 @@
-# PhishGuard — Rule-Based Phishing Email Detection System
+# EmailShield — Rule-Based Phishing Email Detection System
 
 A professional cybersecurity web application for detecting phishing emails using transparent, auditable rules. **No AI / ML.** Built for the BCA Cyber Security Internship (6 Weeks / 120 Hours).
 
